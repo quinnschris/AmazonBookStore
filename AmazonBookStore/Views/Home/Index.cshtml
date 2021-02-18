@@ -7,6 +7,8 @@
  <h1 class="text-center display-5">Professor Hiltons Favorite Books</h1>
 <br />
 
+<!--This container displays the quotes of 2 prominent indivduals on reading. Enjoy the use of row and column from bootstrap-->
+
 <div class="container">
     <div class="row">
         <div class="col">
@@ -32,6 +34,8 @@
 
     <br />
 
+    <!--Generates tables from data stored in database. Pretty neat aye?-->
+
     <table class="table table-striped table-borderless">
         <tr>
             <th scope="col">Title</th>
@@ -43,7 +47,9 @@
             <th scope="col">Price</th>
         </tr>
         @foreach (var x in Model)
-        {
+
+        {<!--Data is normalized and seperated. Wasn't sure if we had to go through the whole ordeal of
+             making more than one table in the database, so I made one.-->
         <tr>
             <td>@x.Title</td>
             <td>@x.AuthorFirstName @x.AuthorMiddleName @x.AuthorLastName</td>

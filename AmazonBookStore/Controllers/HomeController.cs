@@ -14,6 +14,9 @@ namespace AmazonBookStore.Controllers
         private readonly ILogger<HomeController> _logger;
         private IBookstoreRepository _repository;
 
+        //This was some of the stuff we changed. All I really know is we are passing
+        //the data into the view by accessing the repository stored in the database.
+
         public HomeController(ILogger<HomeController> logger, IBookstoreRepository repository)
         {
             _logger = logger;

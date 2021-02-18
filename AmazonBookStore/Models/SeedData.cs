@@ -19,6 +19,9 @@ namespace AmazonBookStore.Models
 
             if(!context.BookInfos.Any())
             {
+                //This is all the seed data provide by professor Hilton, created into
+                //invidual objects of the class "BookInfo". Pretty neat
+
                 context.BookInfos.AddRange(
                     new BookInfo
                     {
