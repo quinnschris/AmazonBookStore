@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AmazonBookStore.Models;
+using AmazonBookStore.Models.ViewModels;
 
 namespace AmazonBookStore.Controllers
 {
@@ -13,6 +14,9 @@ namespace AmazonBookStore.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private IBookstoreRepository _repository;
+
+        //variable for items per page
+        public int PageSize = 2;
 
         //This was some of the stuff we changed. All I really know is we are passing
         //the data into the view by accessing the repository stored in the database.
@@ -23,9 +27,22 @@ namespace AmazonBookStore.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            return View(_repository.BookInfos);
+            return View(new BookInfoViewModel
+            {
+                BookInfos = _repository.BookInfos
+                            .OrderBy(p => p.Id)
+                            .Skip((page - 1) * PageSize)
+                            .Take(PageSize)
+                        ,
+                      PageInfo = new PageInfo
+                      {
+                          CurrentPage = page,
+                          ItemsPerPage = PageSize,
+                          TotalNumItems = _repository.BookInfos.Count()
+                      }
+            });
         }
 
         public IActionResult Privacy()

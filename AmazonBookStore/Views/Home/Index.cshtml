@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model IQueryable<BookInfo>
+@model BookInfoViewModel
 
  <h1 class="text-center display-5">Professor Hiltons Favorite Books</h1>
 <br />
@@ -46,7 +46,7 @@
             <th scope="col">Cagtegory</th>
             <th scope="col">Price</th>
         </tr>
-        @foreach (var x in Model)
+        @foreach (var x in Model.BookInfos)
 
         {<!--Data is normalized and seperated. Wasn't sure if we had to go through the whole ordeal of
              making more than one table in the database, so I made one.-->
@@ -61,4 +61,6 @@
         </tr>
         }
     </table="">
+
+    <div page-model="@Model.PageInfo" page-action="Index"></div>
 </div>
