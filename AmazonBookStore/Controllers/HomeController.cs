@@ -16,7 +16,7 @@ namespace AmazonBookStore.Controllers
         private IBookstoreRepository _repository;
 
         //variable for items per page
-        public int PageSize = 2;
+        public int PageSize = 5;
 
         //This was some of the stuff we changed. All I really know is we are passing
         //the data into the view by accessing the repository stored in the database.

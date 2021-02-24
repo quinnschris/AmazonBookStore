@@ -58,8 +58,9 @@ namespace AmazonBookStore
             app.UseEndpoints(endpoints =>
             {
             endpoints.MapControllerRoute(
+                //This code is used to change the URL header to be more clear when displayed (i.e., P1, P2, P3, etc.)
                 "pagination",
-                "BookInfos/{page}",
+                "BookInfos/P{page}",
                 new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();

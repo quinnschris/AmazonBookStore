@@ -15,6 +15,7 @@ namespace AmazonBookStore.Infrastructure
 
     public class PageLinkTagHelper:TagHelper
     {
+        //UrlHelperFactory - Something we use to constuct a URL (Pretty self explantatory)
         private IUrlHelperFactory urlHelperFactory;
 
         public PageLinkTagHelper(IUrlHelperFactory hp)
@@ -24,15 +25,17 @@ namespace AmazonBookStore.Infrastructure
 
         [ViewContext]
         [HtmlAttributeNotBound]
-
         public ViewContext ViewContext { get; set; }
+
         public PageInfo PageModel { get; set; }
+
         public string PageAction { get; set; }
 
         //Overriding the process method
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
+
             IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
 
             TagBuilder result = new TagBuilder("div");
