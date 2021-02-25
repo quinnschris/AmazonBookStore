@@ -2,7 +2,7 @@
 
 namespace AmazonBookStore.Migrations
 {
-    public partial class Intial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

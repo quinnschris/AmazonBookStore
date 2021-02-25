@@ -31,6 +31,8 @@ namespace AmazonBookStore.Controllers
         {
             return View(new BookInfoViewModel
             {
+
+                // This is data used to build the BookInfoViewModel
                 BookInfos = _repository.BookInfos
                             .OrderBy(p => p.Id)
                             .Skip((page - 1) * PageSize)

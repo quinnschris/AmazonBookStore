@@ -143,6 +143,42 @@ namespace AmazonBookStore.Models
                         Classification = "Fiction",
                         Category = "Thrillers",
                         Price = 15.03F
+                    },
+
+                    new BookInfo
+                    {
+                        Title = "The Way of Kings",
+                        AuthorFirstName = "Brandon",
+                        AuthorLastName = "Sanderson",
+                        Publisher = "Tor",
+                        ISBN = "978-0765326355",
+                        Classification = "Fiction",
+                        Category = "Fantasy",
+                        Price = 17.99F
+                    },
+
+                    new BookInfo
+                    {
+                        Title = "Born a Crime",
+                        AuthorFirstName = "Trevor",
+                        AuthorLastName = "Noah",
+                        Publisher = "One World",
+                        ISBN = "978-0399588174",
+                        Classification = "Non-Fiction",
+                        Category = "Auto-biography",
+                        Price = 14.50F
+                    },
+
+                    new BookInfo
+                    {
+                        Title = "Coddling of the American Mind",
+                        AuthorFirstName = "Greg",
+                        AuthorLastName = "Lukianoff",
+                        Publisher = "Penguin Books",
+                        ISBN = "978-0735224896",
+                        Classification = "Non-Fiction",
+                        Category = "Psychology",
+                        Price = 9.99F
                     }
 
                     ) ;
