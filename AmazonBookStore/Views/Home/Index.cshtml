@@ -7,9 +7,7 @@
 <h1 class="h1">A Few Good Books</h1>
 <br />
 
-<!--This container displays the quotes of a prominent indivdual on reading.-->
-
-
+<!--This reveaks the quote of a prominent indivdual on reading.-->
 
 <a class="btn btn-outline-info" data-toggle="collapse" href="#AbeQuote" role="button" aria-expanded="false" aria-controls="collapseExample">
     View A Quote
@@ -32,9 +30,7 @@
 
 <br />
 
-
 <!--Generates tables from data stored in database. Pretty neat aye?-->
-
 
 <div>
     @foreach (var x in Model.BookInfos)
@@ -54,6 +50,7 @@
         </div>
     }
 
+    <!--Accesses PageLinkTaghelper to generate the pagination with Bootstrap elements to make it look nice-->
     <nav>
         <ul class="pagination d-flex justify-content-center">
             <li class="page-item">
