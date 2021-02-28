@@ -1,65 +1,73 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    ViewBag.PageTitle = "A Few Good Books";
 }
 
 @model BookInfoViewModel
 
-<h1 class="h1">A Few Good Books</h1>
-<br />
 
 <!--This reveaks the quote of a prominent indivdual on reading.-->
 
-<a class="btn btn-outline-info" data-toggle="collapse" href="#AbeQuote" role="button" aria-expanded="false" aria-controls="collapseExample">
-    View A Quote
-</a>
 
-<div class="collapse" id="AbeQuote">
-    <div class="card card-body">
-        <blockquote class="blockquote text-left">
-            <p>
-                "A capacity, and taste, for reading, gives access to whatever has already
-                been discovered by others. It is the key, or one of the keys, to the already
-                solved problems. And not only so. It gives a relish, and facility, for
-                successfully pursuing the [yet] unsolved ones."
-            </p>
-            <footer class="blockquote-footer">Abraham Lincoln</footer>
-        </blockquote>
-    </div>
-</div>
+<div class="row m-1 p-1">
 
-
-<br />
-
-<!--Generates tables from data stored in database. Pretty neat aye?-->
-
-<div>
-    @foreach (var x in Model.BookInfos)
-    {
-        <div class="d-flex justify-content-center">
-            <div class="card card-ouline-primary m-1 p-1 bg-dark" style="width: 30rem;">
-                <span class="text-light">
-                    <h4 class="card-title">@x.Title</h4>
-                    Author: @x.AuthorFirstName @x.AuthorMiddleName @x.AuthorLastName <br />
-                    Publisher: @x.Publisher <br />
-                    ISBN: @x.ISBN <br />
-                    Classification: @x.Classification <br />
-                    Category: @x.Category <br />
-                    <span class="badge badge-primary">$@x.Price</span>
-                </span>
+    <div class="col-3">
+        <a class="btn btn-outline-info" data-toggle="collapse" href="#AbeQuote" role="button" aria-expanded="false" aria-controls="collapseExample">
+            View A Quote
+        </a>
+        <div class="collapse" id="AbeQuote">
+            <div class="card card-body">
+                -->
+                <blockquote class="blockquote text-left">
+                    <p>
+                        "A capacity, and taste, for reading, gives access to whatever has already
+                        been discovered by others. It is the key, or one of the keys, to the already
+                        solved problems. And not only so. It gives a relish, and facility, for
+                        successfully pursuing the [yet] unsolved ones."
+                    </p>
+                    <footer class="blockquote-footer">Abraham Lincoln</footer>
+                </blockquote>
             </div>
         </div>
-    }
+    </div>
 
-    <!--Accesses PageLinkTaghelper to generate the pagination with Bootstrap elements to make it look nice-->
-    <nav>
-        <ul class="pagination d-flex justify-content-center">
-            <li class="page-item">
-                <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
-                     page-class-normal="btn-outline-dark"
-                     page-class-selected="btn-primary"
-                     class="btn-group pull-right m-1"></div>
-            </li>
-        </ul>
-    </nav>
+
+
+    <br />
+
+    <!--Generates tables from data stored in database. Pretty neat aye?-->
+
+    <div class="col-8">
+        <div>
+            @foreach (var x in Model.BookInfos)
+            {
+                <div class="d-flex justify-content-center">
+                    <div class="card card-ouline-primary m-1 p-1 bg-dark" style="width: 30rem;">
+                        <span class="text-light">
+                            <h4 class="card-title">@x.Title</h4>
+                            Author: @x.AuthorFirstName @x.AuthorMiddleName @x.AuthorLastName <br />
+                            Publisher: @x.Publisher <br />
+                            ISBN: @x.ISBN <br />
+                            Classification: @x.Classification <br />
+                            Category: @x.Category <br />
+                            <span class="badge badge-primary">$@x.Price</span>
+                        </span>
+                    </div>
+                </div>
+            }
+
+            <!--Accesses PageLinkTaghelper to generate the pagination with Bootstrap elements to make it look nice-->
+            <nav>
+                <ul class="pagination d-flex justify-content-center">
+                    <li class="page-item">
+                        <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+                             page-class-normal="btn-outline-dark"
+                             page-class-selected="btn-primary"
+                             class="btn-group pull-right m-1"></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
 </div>
