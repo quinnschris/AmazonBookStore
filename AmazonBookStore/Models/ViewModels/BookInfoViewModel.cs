@@ -10,5 +10,7 @@ namespace AmazonBookStore.Models.ViewModels
 
         public PageInfo PageInfo { get; set; }
 
+        public string CurrentCategory { get; set; }
+
     }
 }

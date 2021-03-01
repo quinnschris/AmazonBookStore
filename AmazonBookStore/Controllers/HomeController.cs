@@ -27,14 +27,15 @@ namespace AmazonBookStore.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             return View(new BookInfoViewModel
             {
 
                 // This is data used to build the BookInfoViewModel
                 BookInfos = _repository.BookInfos
-                            .OrderBy(p => p.Id)
+                            .Where(b => category == null || b.Category == category)
+                            .OrderBy(b => b.Id)
                             .Skip((page - 1) * PageSize)
                             .Take(PageSize)
                         ,
@@ -43,7 +44,8 @@ namespace AmazonBookStore.Controllers
                           CurrentPage = page,
                           ItemsPerPage = PageSize,
                           TotalNumItems = _repository.BookInfos.Count()
-                      }
+                      },
+                      CurrentCategory = category
             });
         }
 
