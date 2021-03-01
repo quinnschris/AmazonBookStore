@@ -9,9 +9,9 @@
 <!--This reveaks the quote of a prominent indivdual on reading.-->
 
 
-<div class="row m-1 p-1">
+<div class="row m-1 p-1 justify-content-center">
 
-    <div class="col-3">
+    <div class="col-5">
         <a class="btn btn-outline-info" data-toggle="collapse" href="#AbeQuote" role="button" aria-expanded="false" aria-controls="collapseExample">
             View A Quote
         </a>
@@ -37,7 +37,7 @@
 
     <!--Generates tables from data stored in database. Pretty neat aye?-->
 
-    <div class="col-8">
+    <div class="col-5">
         <div>
             @foreach (var x in Model.BookInfos)
             {
@@ -51,6 +51,7 @@
                         <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
                              page-class-normal="btn-outline-dark"
                              page-class-selected="btn-primary"
+                             page-url-category="@Model.CurrentCategory"
                              class="btn-group pull-right m-1"></div>
                     </li>
                 </ul>

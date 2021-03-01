@@ -57,11 +57,25 @@ namespace AmazonBookStore
 
             app.UseEndpoints(endpoints =>
             {
-            endpoints.MapControllerRoute(
-                //This code is used to change the URL header to be more clear when displayed (i.e., P1, P2, P3, etc.)
-                "pagination",
-                "BookInfos/P{page}",
-                new { Controller = "Home", action = "Index" });
+                // Endpoint with both page and category
+                endpoints.MapControllerRoute("categorypage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                // Endpoint with only page
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                // Endpoint with only category
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index" });
+
+                // Endpoint when user is referencing specific BookInfos on a page created
+                endpoints.MapControllerRoute("pagination",
+                    "BookInfos/P{page}",
+                    new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
             });
