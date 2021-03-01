@@ -41,7 +41,9 @@
         <div>
             @foreach (var x in Model.BookInfos)
             {
-                <partial name="BookInfoSummary" model="x" />
+                <div class="col">
+                    <partial name="BookInfoSummary" model="x" />
+                </div>
             }
 
             <!--Accesses PageLinkTaghelper to generate the pagination with Bootstrap elements to make it look nice-->

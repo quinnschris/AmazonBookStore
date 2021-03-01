@@ -2,7 +2,8 @@
 
 <div class="d-flex justify-content-center">
     <div class="card card-ouline-primary m-1 p-1 bg-dark" style="width: 30rem;">
-        <span class="text-light">
+        <div class="text-light">
+            <img src="@Model.Image" width="100" align="right" />
             <h4 class="card-title">@Model.Title</h4>
             Author: @Model.AuthorFirstName @Model.AuthorMiddleName @Model.AuthorLastName <br />
             Publisher: @Model.Publisher <br />
@@ -10,6 +11,6 @@
             Classification: @Model.Classification <br />
             Category: @Model.Category <br />
             <span class="badge badge-primary">$@Model.Price</span>
-        </span>
+        </div>
     </div>
 </div>

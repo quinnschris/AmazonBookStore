@@ -29,7 +29,7 @@ namespace AmazonBookStore
 
             services.AddDbContext<BookstoreDbContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:AmazonBookstoreConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:AmazonBookstoreConnection"]);
             });
 
             services.AddScoped<IBookstoreRepository, EFBookStoreRepository>();
