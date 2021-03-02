@@ -21,6 +21,7 @@ namespace AmazonBookStore.Models
             {
                 //This is all the seed data provide by professor Hilton, created into
                 //invidual objects of the class "BookInfo". Pretty neat
+                //I've been trying to add images, currently an unsuccessful work in progress. When I have time I'll figure it out
 
                 context.BookInfos.AddRange(
                     new BookInfo

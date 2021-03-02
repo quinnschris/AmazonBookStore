@@ -5,60 +5,27 @@
 
 @model BookInfoViewModel
 
+ <!--Generates tables from data stored in database. Pretty neat aye?-->
 
-<!--This reveaks the quote of a prominent indivdual on reading.-->
-
-
-<div class="row m-1 p-1 justify-content-center">
-
-    <div class="col-5">
-        <a class="btn btn-outline-info" data-toggle="collapse" href="#AbeQuote" role="button" aria-expanded="false" aria-controls="collapseExample">
-            View A Quote
-        </a>
-        <div class="collapse" id="AbeQuote">
-            <div class="card card-body">
-                -->
-                <blockquote class="blockquote text-left">
-                    <p>
-                        "A capacity, and taste, for reading, gives access to whatever has already
-                        been discovered by others. It is the key, or one of the keys, to the already
-                        solved problems. And not only so. It gives a relish, and facility, for
-                        successfully pursuing the [yet] unsolved ones."
-                    </p>
-                    <footer class="blockquote-footer">Abraham Lincoln</footer>
-                </blockquote>
-            </div>
+<div>
+    @foreach (var x in Model.BookInfos)
+    {
+        <div class="col">
+            <partial name="BookInfoSummary" model="x" />
         </div>
-    </div>
+    }
 
+    <!--Accesses PageLinkTaghelper to generate the pagination with Bootstrap elements to make it look nice-->
 
-
-    <br />
-
-    <!--Generates tables from data stored in database. Pretty neat aye?-->
-
-    <div class="col-5">
-        <div>
-            @foreach (var x in Model.BookInfos)
-            {
-                <div class="col">
-                    <partial name="BookInfoSummary" model="x" />
-                </div>
-            }
-
-            <!--Accesses PageLinkTaghelper to generate the pagination with Bootstrap elements to make it look nice-->
-            <nav>
-                <ul class="pagination d-flex justify-content-center">
-                    <li class="page-item">
-                        <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
-                             page-class-normal="btn-outline-dark"
-                             page-class-selected="btn-primary"
-                             page-url-category="@Model.CurrentCategory"
-                             class="btn-group pull-right m-1"></div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
+    <nav>
+        <ul class="pagination d-flex justify-content-center">
+            <li class="page-item">
+                <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+                        page-class-normal="btn-outline-dark"
+                        page-class-selected="btn-primary"
+                        page-url-category="@Model.CurrentCategory"
+                        class="btn-group pull-right m-1"></div>
+            </li>
+        </ul>
+    </nav>
 </div>

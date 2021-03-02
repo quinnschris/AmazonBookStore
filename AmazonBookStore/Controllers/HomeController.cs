@@ -32,7 +32,8 @@ namespace AmazonBookStore.Controllers
             return View(new BookInfoViewModel
             {
 
-                // This is data used to build the BookInfoViewModel
+                // This is the information used to build the BookInfoViewModel
+
                 BookInfos = _repository.BookInfos
                             .Where(b => category == null || b.Category == category)
                             .OrderBy(b => b.Id)
@@ -43,7 +44,8 @@ namespace AmazonBookStore.Controllers
                       {
                           CurrentPage = page,
                           ItemsPerPage = PageSize,
-                          TotalNumItems = _repository.BookInfos.Count()
+                          TotalNumItems = category == null ? _repository.BookInfos.Count() :
+                                _repository.BookInfos.Where(b => b.Category == category).Count()
                       },
                       CurrentCategory = category
             });

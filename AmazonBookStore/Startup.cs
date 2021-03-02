@@ -59,17 +59,17 @@ namespace AmazonBookStore
             {
                 // Endpoint with both page and category
                 endpoints.MapControllerRoute("categorypage",
-                    "{category}/{page:int}",
+                    "Books/{category}/P{page:int}",
                     new { Controller = "Home", action = "Index" });
 
                 // Endpoint with only page
                 endpoints.MapControllerRoute("page",
-                    "{page:int}",
+                    "P{page:int}",
                     new { Controller = "Home", action = "Index" });
 
                 // Endpoint with only category
                 endpoints.MapControllerRoute("category",
-                    "{category}",
+                    "Books/{category}",
                     new { Controller = "Home", action = "Index" });
 
                 // Endpoint when user is referencing specific BookInfos on a page created

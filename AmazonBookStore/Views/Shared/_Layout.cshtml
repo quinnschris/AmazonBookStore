@@ -32,13 +32,45 @@
         </header>
     </div>
 
-    <div class="col-9">
-        <main role="main" class="pb-3">
+    <div class="row m-1 p-1">
+
+        <div class="col-3">
+
             <h1 class="h1">@ViewBag.PageTitle</h1>
-            @RenderBody()
-        </main>
+
+            <a class="btn btn-outline-info" data-toggle="collapse" href="#AbeQuote" role="button" aria-expanded="false" aria-controls="collapseExample">
+                View A Quote
+            </a>
+
+            <div class="collapse" id="AbeQuote">
+                <div class="card card-body">
+                    -->
+                    <blockquote class="blockquote text-left">
+                        <p>
+                            "A capacity, and taste, for reading, gives access to whatever has already
+                            been discovered by others. It is the key, or one of the keys, to the already
+                            solved problems. And not only so. It gives a relish, and facility, for
+                            successfully pursuing the [yet] unsolved ones."
+                        </p>
+                        <footer class="blockquote-footer">Abraham Lincoln</footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+            <vc:navigation-menu />
+
+        </div>
+
+        <div class="col-9">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
-        
+
 
     <footer class="border-top footer text-muted">
         <div class="container">

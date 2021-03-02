@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AmazonBookStore.Migrations
 {
     [DbContext(typeof(BookstoreDbContext))]
-    [Migration("20210301171429_Initial")]
+    [Migration("20210302031604_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
