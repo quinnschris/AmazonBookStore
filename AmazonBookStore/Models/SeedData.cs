@@ -34,6 +34,7 @@ namespace AmazonBookStore.Models
                         Classification = "Fiction",
                         Category = "Classic",
                         Price = 9.95F,
+                        Pages = 1488,
                         Image = "~/img/lesmiserables.jpg"
                     },
 
@@ -48,6 +49,7 @@ namespace AmazonBookStore.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 14.58F,
+                        Pages = 944,
                         Image = "~/img/TeamOfRivals.jpg"
                     },
 
@@ -61,6 +63,7 @@ namespace AmazonBookStore.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 21.54F,
+                        Pages = 832,
                         Image = "~/img/thesnowball.jpg"
 
                     },
@@ -76,6 +79,7 @@ namespace AmazonBookStore.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 11.61F,
+                        Pages = 864,
                         Image = "~/img/americanulysses.jpg"
                     },
 
@@ -89,6 +93,7 @@ namespace AmazonBookStore.Models
                         Classification = "Non-Fiction",
                         Category = "Historical",
                         Price = 13.33F,
+                        Pages = 528,
                         Image = "~/img/unbroken.jpg"
                     },
 
@@ -102,6 +107,7 @@ namespace AmazonBookStore.Models
                         Classification = "Fiction",
                         Category = "Historical Fiction",
                         Price = 15.95F,
+                        Pages = 288,
                         Image = "~/img/thegreattrainrobbery.png"
                     },
 
@@ -115,6 +121,7 @@ namespace AmazonBookStore.Models
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
                         Price = 14.99F,
+                        Pages = 304,
                         Image = "~/img/deepwork.jpg"
                     },
 
@@ -128,6 +135,7 @@ namespace AmazonBookStore.Models
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
                         Price = 21.66F,
+                        Pages = 240,
                         Image = "~/img/ItsYourShip.jpg"
                     },
 
@@ -141,6 +149,7 @@ namespace AmazonBookStore.Models
                         Classification = "Non-Fiction",
                         Category = "Business",
                         Price = 29.16F,
+                        Pages = 400,
                         Image = "~/img/thevirginway.jpg"
                     },
 
@@ -154,6 +163,7 @@ namespace AmazonBookStore.Models
                         Classification = "Fiction",
                         Category = "Thrillers",
                         Price = 15.03F,
+                        Pages = 642,
                         Image = "~/img/sycamorerow.jpg"
                     },
 
@@ -167,6 +177,7 @@ namespace AmazonBookStore.Models
                         Classification = "Fiction",
                         Category = "Fantasy",
                         Price = 17.99F,
+                        Pages = 1007,
                         Image = "~/img/WayOfKings.jpg"
                     },
 
@@ -180,6 +191,7 @@ namespace AmazonBookStore.Models
                         Classification = "Non-Fiction",
                         Category = "Auto-biography",
                         Price = 14.50F,
+                        Pages = 304,
                         Image = "~/img/bornacrime.jpg"
                     },
 
@@ -193,6 +205,7 @@ namespace AmazonBookStore.Models
                         Classification = "Non-Fiction",
                         Category = "Psychology",
                         Price = 9.99F,
+                        Pages = 352,
                         Image = "~/img/thecoddlingoftheamericanmind.jpg"
                     }
 

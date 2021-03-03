@@ -37,11 +37,13 @@
 
     <!-- Headings, block quote and View component are located in this section of code -->
 
+    <h1 class="h1 text-center">@ViewBag.PageTitle</h1>
+
+    <br />
+
     <div class="row m-1 p-1">
 
         <div class="col-3">
-
-            <h1 class="h1">@ViewBag.PageTitle</h1>
 
             <a class="btn btn-outline-info" data-toggle="collapse" href="#AbeQuote" role="button" aria-expanded="false" aria-controls="collapseExample">
                 View A Quote
@@ -75,7 +77,7 @@
                 @RenderBody()
             </main>
         </div>
-        
+
     </div>
 
 

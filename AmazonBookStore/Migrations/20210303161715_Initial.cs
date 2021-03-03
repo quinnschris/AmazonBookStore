@@ -21,6 +21,7 @@ namespace AmazonBookStore.Migrations
                     Classification = table.Column<string>(type: "TEXT", nullable: false),
                     Category = table.Column<string>(type: "TEXT", nullable: false),
                     Price = table.Column<float>(type: "REAL", nullable: false),
+                    Pages = table.Column<int>(type: "INTEGER", nullable: false),
                     Image = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>

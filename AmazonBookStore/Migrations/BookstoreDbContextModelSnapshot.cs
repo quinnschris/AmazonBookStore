@@ -47,6 +47,9 @@ namespace AmazonBookStore.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Pages")
+                        .HasColumnType("INTEGER");
+
                     b.Property<float>("Price")
                         .HasColumnType("REAL");
 

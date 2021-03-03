@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AmazonBookStore.Migrations
 {
     [DbContext(typeof(BookstoreDbContext))]
-    [Migration("20210302031604_Initial")]
+    [Migration("20210303161715_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,6 +48,9 @@ namespace AmazonBookStore.Migrations
 
                     b.Property<string>("Image")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Pages")
+                        .HasColumnType("INTEGER");
 
                     b.Property<float>("Price")
                         .HasColumnType("REAL");
