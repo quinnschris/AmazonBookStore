@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+
+    <!-- Navigation bar -->
+
     <div class="row">
         <header>
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -31,6 +34,8 @@
             </nav>
         </header>
     </div>
+
+    <!-- Headings, block quote and View component are located in this section of code -->
 
     <div class="row m-1 p-1">
 
@@ -64,11 +69,13 @@
 
         </div>
 
+        <!-- Body is rendered here -->
         <div class="col-9">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
         </div>
+        
     </div>
 
 

@@ -17,6 +17,7 @@ namespace AmazonBookStore.Infrastructure
     public class PageLinkTagHelper:TagHelper
     {
         //UrlHelperFactory - Something we use to constuct a URL (Pretty self explantatory)
+
         private IUrlHelperFactory urlHelperFactory;
 
         public PageLinkTagHelper(IUrlHelperFactory hp)

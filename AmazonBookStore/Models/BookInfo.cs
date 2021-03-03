@@ -44,6 +44,7 @@ namespace AmazonBookStore.Models
         [Required]
         public float Price { get; set; }
 
+        //Potential variable that can be dropped to reference the images stored in ~/wwwroot/img
         public string Image { get; set; }
 
     }
