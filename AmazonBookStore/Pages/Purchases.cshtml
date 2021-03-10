@@ -13,4 +13,24 @@
         </tr>
     </thead>
 
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            <tr>
+                <td>@line.BookInfo.Title</td><td>@line.Quanity</td><td>@line.BookInfo.Price</td><td>@((line.Quanity * line.BookInfo.Price).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us")))</td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">@Model.Cart.TotalSum().ToString("c", System.Globalization.CultureInfo.GetCultureInfo("en-us"))</td>
+        </tr>
+    </tfoot>
+
 </table>
+
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+</div>

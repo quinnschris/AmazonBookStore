@@ -37,9 +37,9 @@ namespace AmazonBookStore.Pages
             Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
-        public IActionResult OnPost(long bookId, string returnUrl)
+        public IActionResult OnPost(long Id, string returnUrl)
         {
-            BookInfo bookInfo = repository.BookInfos.FirstOrDefault(b => b.Id == bookId);
+            BookInfo bookInfo = repository.BookInfos.FirstOrDefault(b => b.Id == Id);
 
             Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
