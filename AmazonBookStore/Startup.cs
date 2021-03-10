@@ -33,6 +33,13 @@ namespace AmazonBookStore
             });
 
             services.AddScoped<IBookstoreRepository, EFBookStoreRepository>();
+
+            //Adding service for razor pages
+            services.AddRazorPages();
+
+            // Adding services to "Make things stick"
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +57,9 @@ namespace AmazonBookStore
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // Service for session use to "Make things stick"
+            app.UseSession();
 
             app.UseRouting();
 
@@ -88,6 +98,9 @@ namespace AmazonBookStore
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
+
+                // Endpoint for razor pages
+                endpoints.MapRazorPages();
             });
 
             SeedData.EnsurePopulated(app);
