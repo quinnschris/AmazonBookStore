@@ -15,9 +15,10 @@ namespace AmazonBookStore.Pages
 
         // Constructor
 
-        public PurchasesModel (IBookstoreRepository repo)
+        public PurchasesModel (IBookstoreRepository repo, Cart cartService)
         {
             repository = repo;
+            Cart = cartService;
         }
 
 
@@ -33,20 +34,20 @@ namespace AmazonBookStore.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
         public IActionResult OnPost(long Id, string returnUrl)
         {
             BookInfo bookInfo = repository.BookInfos.FirstOrDefault(b => b.Id == Id);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
-
             Cart.AddItem(bookInfo, 1);
 
-            HttpContext.Session.SetJson("cart", Cart);
+            return RedirectToPage(new { returnUrl = returnUrl });
+        }
 
+        public IActionResult OnPostRemove(long id, string returnUrl)
+        {
+            Cart.RemoveLine(Cart.Lines.First(cl => cl.BookInfo.Id == id).BookInfo);
             return RedirectToPage(new { returnUrl = returnUrl });
         }
     }

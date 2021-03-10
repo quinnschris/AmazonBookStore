@@ -10,7 +10,7 @@ namespace AmazonBookStore.Models
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
 
-        public void AddItem (BookInfo info, int qty)
+        public virtual void AddItem (BookInfo info, int qty)
         {
             CartLine line = Lines.Where(b => b.BookInfo.Id == info.Id).FirstOrDefault();
 
@@ -31,12 +31,12 @@ namespace AmazonBookStore.Models
         }
 
         // Used to remove a single item from cart
-        public void RemoveLine(BookInfo info) =>
+        public virtual void RemoveLine(BookInfo info) =>
             Lines.RemoveAll(x => x.BookInfo.Id == info.Id);
 
 
         // Used to clear cart
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
 
         // Used to calculate sum of cart
