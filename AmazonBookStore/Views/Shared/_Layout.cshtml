@@ -1,8 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"] - AmazonBookStore</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
@@ -10,31 +9,32 @@
 </head>
 <body>
 
-    <!-- View component for accessing cart-->
     <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <div class="navbar-header">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AmazonBookStore</a>
+            </div>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.britannica.com/biography/Abraham-Lincoln" target="_blank">Bio of Lincoln</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
 
-    <div class="row">
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AmazonBookStore</a>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="https://www.britannica.com/biography/Abraham-Lincoln" target="_blank">Bio of Lincoln</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="text-right">
+                    <!-- View component for accessing cart-->
                     <vc:cart-summary />
-                </div>
-            </nav>
-        </header>
-    </div>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Headings, block quote and View component are located in this section of code -->
 
@@ -73,6 +73,7 @@
         </div>
 
         <!-- Body is rendered here -->
+
         <div class="col-9">
             <main role="main" class="pb-3">
                 @RenderBody()

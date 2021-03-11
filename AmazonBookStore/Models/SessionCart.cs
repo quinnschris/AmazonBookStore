@@ -7,6 +7,9 @@ namespace AmazonBookStore.Models
 {
     public class SessionCart : Cart
     {
+        // This model is used to maintain items that are stored in a cart during a session by
+        // converting to json and storing in the session variable
+
         public static Cart GetCart(IServiceProvider services)
         {
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?
